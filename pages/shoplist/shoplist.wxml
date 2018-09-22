@@ -1,0 +1,28 @@
+<view class='shop'>
+  <image class='shop-image' src='http://p1.meituan.net/200.0/deal/89b20535082c5507fe689a58b5bd198546189.jpg@76_0_448_448a%7C267h_267w_2e_90Q'></image>
+ <view class='shop-info'>
+  <text class='shop-title'>店铺名称</text>
+  <text class='shop-tel'>电话:12345678</text>
+  <text class='shop-add'>地址:</text>
+  <text class='shop-time'>营业时间:</text>
+  </view>
+ <view class='shop-star'>
+  <view class='star-before' style="width:50%;">★★★★★</view> 
+  <view class='star-after'  >★★★★★</view>
+ </view>
+ </view>
+<view class='shop'wx:for="{{ shopList}}" wx:key="id">
+  <image class='shop-image' src="{{ item.images[0]}}"></image>
+ <view class='shop-info'>
+  <text class='shop-title ell'>{{item.name}}</text>
+  <text class='shop-tel'>电话：{{item.phone}}</text>
+  <text class='shop-add'>地址:{{item.address}}</text>
+  <text class='shop-time'>营业时间:{{item.businessHours}}</text>
+  </view>
+ <view class='shop-star'>
+  <view class='star-before' style="width:{{item.score}}%;">★★★★★</view> 
+  <view class='star-after' >★★★★★</view>
+ </view>
+ </view>
+ <view class="loadmore loading" wx:if="{{hasMore}}">正在加载...</view>
+<view class="loadmore" wx:else>我的底线很低</view>
